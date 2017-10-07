@@ -28,13 +28,19 @@ class Login {
       data: form_data,
       type: 'POST',
       success: function(php_response){
+        console.log(php_response);
         if (php_response.msg == "OK") {
           window.location.href = 'main.html';
         }else {
           alert(php_response.msg);
         }
       },
-      error: function(){
+      error: function(xhr, status, error){
+
+        console.error("Status:" + status);
+        console.error("Error:" + error);
+        console.error("ResponseText:" + xhr.responseText);
+
         alert("error en la comunicación con el servidor");
       }
     })
