@@ -35,12 +35,7 @@ class Login {
           alert(php_response.msg);
         }
       },
-      error: function(xhr, status, error){
-
-        console.error("Status:" + status);
-        console.error("Error:" + error);
-        console.error("ResponseText:" + xhr.responseText);
-
+      error: function(){
         alert("error en la comunicación con el servidor");
       }
     })
